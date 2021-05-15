@@ -1,0 +1,927 @@
+body 
+    margin: 0 auto
+    padding: 0
+    font-size: 100%
+    background-color: #121212
+    overflow: hidden
+   
+  
+@font-face
+    font-family: 'Gotham Pro'
+    src : url("../fonts/gotam/GothamPro-Bold.ttf")
+*
+    font-family: 'Gotham Pro'
+section
+    width: 100%
+    height: auto   
+button, a
+    cursor: pointer
+    outline: none
+    border: none
+    text-decoration: none
+
+// COLORS========================================
+
+$gradientRed: linear-gradient(90deg, #471521 0%, #EB0E0E 100%)
+$buttonGradient: linear-gradient(90deg, #232526 0%, #414345 100%)
+$black: #121212
+$red: #EB0E0E
+$white:  #FFFFFF
+$light-gray: #F0F3EC 
+
+// ============================================= 
+p, a 
+    -webkit-text-stroke: .7px $black  
+h2
+    font-size: 2.5em
+    white-space: nowrap
+    margin: 0
+    color: $red
+    text-shadow: 3px 5px 6px #000000, -5px -6px 5px $black
+    -webkit-text-stroke: 1px $black
+h3
+    font-size: 1.9em
+    white-space: nowrap
+    margin: 0
+    color: $red
+    text-shadow:  -3px -4px 5px $black
+    -webkit-text-stroke: 1px $black
+.slide
+    min-height: 970px
+.wraper-container-slick 
+    width: 100%
+    height: auto
+    min-height: 970px
+    margin: 0 auto
+    position: relative
+    
+
+.inner_btn_slider
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    position: absolute
+    display: flex
+    justify-content: space-between
+    z-index: 1
+    top: 50%
+    width: 3%
+    min-height: 250px
+   
+.css_btn
+    border-radius: 10px
+    width: 69px
+    height: 64px
+    background: $buttonGradient
+    &:active
+        background: $gradientRed
+        
+
+.wrapper-slider
+    width: 100%
+    height: auto
+
+.slick-dots
+    
+    display: flex
+    align-items: flex-end
+    width: 90%
+    min-height: 200px
+    justify-content: space-between
+.slick-dots li:nth-child(1)
+    width: 240px
+    height: 180px
+    content: url('../img/cran1.png')
+    background-color: #1c10ca
+    cursor: pointer
+    display: none
+    margin: 5px
+    &:hover
+        width: 250px
+        height: 190px 
+        margin: 0px
+.slick-dots li:nth-child(2)
+    width: 240px
+    height: 180px
+    content: url('../img/cran1.png')
+    
+    cursor: pointer
+    margin: 5px
+    box-shadow: 0px 0px 20px 11px #000000
+    &:hover
+        width: 250px
+        height: 190px
+        margin: 0px 
+.slick-dots li:nth-child(3)
+    position: absolute
+    width: 241px
+    height: 69px
+    top: 52.5%
+    right: 81.5%
+    background: $gradientRed
+    white-space: nowrap
+    transform: rotate(-90deg)
+    font-size: 1.1em
+    color: $white
+    content: " New!"
+    marker: rgrg
+    box-shadow: 0 0 15px $red
+.slick-dots li:nth-child(4)
+    width: 240px
+    height: 180px
+    content: url('../img/gruz1.png')
+    background-color: #1c10ca
+    cursor: pointer
+    margin: 5px
+    box-shadow: 0px 0px 20px 11px #000000
+    &:hover
+        width: 250px
+        height: 190px 
+        margin: 0px
+.slick-dots li:nth-child(5)
+    width: 240px
+    height: 180px
+    content: url('../img/mech1.png')
+    background-color: #1c10ca
+    cursor: pointer
+    margin: 5px
+    box-shadow: 0px 0px 20px 11px #000000
+    &:hover
+        margin: 0
+        width: 250px
+        height: 190px 
+.slick-dots li button
+    font-size: 1.2em
+    color: transparent
+    background: none
+.header
+    width: 100%
+    min-height: 100px
+    display: flex
+    justify-content: center
+    position: absolute
+    z-index: 1
+    
+.inner_header
+    width: 90%
+    display: flex
+    justify-content: space-between
+    
+.logo
+    width: 15%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    
+    img
+        width: 72px
+        height: 41px
+    p
+        color: $white
+.inner_network
+    width: 18%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    
+    img
+        width: 45px
+    p
+        color: $white
+.inner_adress
+    width: 16%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    :nth-child(1)
+        color: $white
+    :nth-child(2)
+        color: $white
+        white-space: nowrap
+        font-size: .9em
+.inner_number
+    width: 18%
+    display: flex
+    align-items: center
+    
+    img
+        width: 24px
+        padding: 5px
+    a
+        font-size: 1.2em
+        display: flex
+        align-items: center
+        text-decoration: none
+        white-space: nowrap
+        color: $white    
+
+// BURGER-START ===============================================================================
+
+%line
+    background: #121212
+    width: 39px
+    height: 3px
+
+@keyframes menu-hover-top-over 
+    0% 
+        transform: translateY(0)
+    50%
+        transform: translateY(8px)
+    100%
+        transform: translateY(0)  
+@keyframes menu-hover-bottom-over 
+    0% 
+        transform: translateY(0)
+    50%
+        transform: translateY(-8px)
+    100%
+        transform: translateY(0)  
+@keyframes menu-load-state-top
+    0% 
+        transform: translateY(0)
+    50%
+        transform: translateY(8px)
+    100%
+        transform: translateY(0)
+  
+@keyframes menu-load-state-bottom
+    0% 
+        transform: translateY(0)
+    50%
+        transform: translateY(-8px)
+    100%
+        transform: translateY(0)
+  
+@keyframes menu-active-slide 
+    0% 
+        transform: translateX(-10px)
+    100%
+        transform: translateX(0)
+  
+@keyframes top-rot-in 
+    0% 
+        transform: rotate(0deg)
+        transform-origin: left
+    100% 
+        transform: rotate(45deg)
+        transform-origin: left
+ 
+@keyframes bot-rot-in 
+    0% 
+        transform: rotate(0deg)
+        transform-origin: left 
+    100% 
+        transform: rotate(-45deg)
+        transform-origin: left
+ 
+.inner-burger
+    font-family: 'Open Sans', sans-serif
+    color: white
+    width: 70px
+    height: 70px
+    border-radius: 50%
+    background: $gradientRed
+    display: flex
+    align-items: center
+    justify-content: center
+    position: fixed
+    right: 20px
+    top: 20px
+    display: none
+    a
+        color: white 
+
+.menu
+    @extend %line
+    position: fixed
+    right: 35px
+    &:before
+        @extend %line
+        content: ''
+        position: absolute
+        top: -11px
+        left: 0px
+        animation:  menu-load-state-top .5s 
+    &:after
+        @extend %line
+        content: ''
+        position: absolute
+        top: 11px
+        left: 0px
+        animation:  menu-load-state-bottom .5s  
+    b
+        opacity:0
+        top:-11px
+        left: 13px
+        font-size:.55em
+        line-height:1em
+        position: relative
+        transition: all 0.15s 0.15s ease-in
+        transition-delay: .5s 
+.menu:hover
+    background: transparent
+    transition: all 0.15s 0 ease-out
+    &:before
+        animation: menu-hover-top-over .5s .5s forwards
+    &:after
+        animation: menu-hover-bottom-over .5s .5s forwards
+    b
+        font-size: .9em
+        opacity: 1
+        left: -1px
+        top: -10px
+        color: #121212 
+.sub-menu
+    display: none
+    z-index: 1
+    align-items: center
+    justify-content: center
+    font-weight:300
+    font-size:1em
+    list-style-type: none
+    padding:10px 20px
+    min-width: 20%
+    min-height: 500px
+    background: $gradientRed
+    margin:0
+    position: fixed
+    top: 94px
+    right: 20px
+    transition: opacity 0.25s ease
+    opacity:0    
+.container-content
+    width: 100%
+    min-height: 450px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    
+.inner-up-content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    b
+        width: 147px
+        height: 72px
+.inner-center-content 
+    width: 100%
+    display: flex
+    height: 40%    
+.inner-left-content
+    display: flex
+    width: 100%
+    font-size: 1.2em
+    flex-direction: column
+    justify-content: space-between
+    min-height: 270px
+    
+    a
+        text-decoration: none
+        margin: 2px
+        &:hover
+            font-size: 1.2em
+            margin: 0px          
+.inner-under-content
+    align-items: center
+    display: flex
+    min-height: 130px
+    flex-direction: column
+    justify-content: space-between
+    
+.menu-btn
+    width: 65%
+    min-height: 50px
+    background: $buttonGradient
+    color: $white
+    border-radius: 50px
+    border: none
+    outline: none
+    font-family: 'Gotham Pro' 
+    box-shadow: 0 0 15px #000000
+.inner-network
+    min-width: 100%
+    display: flex
+    padding:  5px
+    align-items: center
+    border: 1px solid
+    box-shadow: 0 0 15px #000000
+    border-color: $black
+    justify-content: space-between
+    img 
+        width: 40px
+.active
+    
+    .menu
+        
+        right: 35px
+        background: transparent
+        &:before
+            top: -15px
+            left: 4px
+            width: 41px
+            animation: top-rot-in .5s forwards
+        &:after
+            top: 14px
+            left: 4px
+            width: 41px
+            animation: bot-rot-in .5s forwards
+        b
+            opacity:0
+            transition: all 0.10s 0 ease-out     
+    .sub-menu
+        display: flex
+        opacity:1
+        transition: opacity 0.25s ease
+        box-shadow: 0 0 15px #000000
+        animation: menu-active-slide .25s reverse 
+
+// first page 1 =========================================================================================    
+.wrapper_home_page
+    width: 100%
+    height: auto
+    min-height: 970px
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    background-image: url("../img/home-page.jpg")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    .content_inner
+        display: flex
+        align-items: flex-end
+        width: 95%
+        min-height: 850px
+.content-container
+    width: 99%
+    min-height: 80%
+    display: flex
+    flex-direction: column
+    
+.up_content_block
+    width: 100%
+    min-height: 40%
+    
+    display: flex
+    align-items: center
+    font-size: 3.3em
+    align-items: flex-end
+    h1
+        display: flex
+        width: 48%
+        white-space: nowrap
+        margin: 0
+        color:  $red
+        text-shadow: 3px 5px 6px #000000, -6px -7px 6px $black
+        -webkit-text-stroke: 4px $black
+.middle_сontent_block
+    display: flex
+    align-items: center
+    justify-content: space-between
+    width: 104%
+    min-height: 30%   
+.inner_text
+    width: 99%
+    height: auto
+    p
+        font-size: 1.9em
+        color: $white
+.inner_under_btn
+    width: 50%
+    min-height: 10%
+    display: flex
+.request_btn
+    width: 300px
+    height: 67px
+    background: $gradientRed 
+    color: $white
+    font-size: 1.2em
+    outline: none
+    border: none
+    box-shadow: 0 0 15px #000000
+.inner_request
+    display: none
+    width: 25%
+    align-items: center
+    justify-content: center
+    min-height: 1000px
+    top: 0
+    left: 0
+    position: fixed
+    z-index: 1
+    background-color: #00000083
+.pop_up_request
+    position: absolute
+    left: 50%
+    top: 35%
+    width: 10%
+    height: 30%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    background: $gradientRed
+.up_img
+    width: 100%
+    min-height: 60px
+    display: flex
+    justify-content: flex-end
+    background: $buttonGradient  
+    img
+        margin: 10px 
+        cursor: pointer 
+.inner_input
+    width: 100%
+    min-height: 200px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    justify-content: space-between
+    input
+        width: 220px
+        height: 40px
+    button
+        width: 228px
+        height: 50px
+        background: $buttonGradient
+        margin-bottom: 15px
+        color: $white
+        font-size: 1.2em
+        box-shadow: 0 0 15px #000000       
+form
+    width: 100%
+    min-height: 120px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-direction: column
+    
+.under_inner
+    width: 100%
+    min-height: 10%
+    display: flex
+.left_inner
+    width: 40%
+    height: auto
+    display: flex
+    align-items: center
+    a
+        
+        display: flex
+        align-items: center
+        color: rgba(255, 255, 255, 0.6)
+        font-size: 1em
+        img
+            padding: 10px
+.right_inner
+    width:70%
+    height: auto
+    display: flex
+    img
+        width: 240px
+        height: 180px
+        box-shadow: 0 0 15px #000000
+        margin: 5px
+        cursor: pointer
+        &:hover
+            width: 250px
+            height: 190px
+            margin: 0px
+
+// second page 2  ====================================================================================
+.wrapper_about_center
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    background-color:  #121212
+    .content_inner
+        min-height: 970px
+        width: 95%
+        display: flex
+        align-items: center
+.container-content
+    width: 100%
+    height: auto
+    max-height: 80%
+.up_content
+    width: 100%
+    min-height: 150px
+    display: flex
+    align-items: center
+    justify-content: center
+    
+.midle_block_content
+    width: 99.5%
+    height: auto
+    min-height: 563px
+    display: flex
+    align-items: flex-end
+    justify-content: space-between
+.left_contant
+    width: 45%
+    height: auto
+    max-height: 437px
+    font-size: 1.2em
+    p
+        color: $white
+    span
+        color: $red
+.right_contant
+    width: 45%
+    height: auto
+    max-width: 737px
+    min-height: 414px
+    font-size: 1.2em
+    background-image: url("../img/image22 1.jpg")
+    background-position: center
+    background-size: cover
+    background-repeat: no-repeat
+    box-shadow: 0 0 15px #000000
+
+// third page -=========================================================================================
+
+.wrapper_courses
+    display: flex
+    align-items: flex-end
+    justify-content: flex-end
+    background-color: #121212
+    .content_inner
+        width: 95%
+        display: flex
+        min-height: 970px
+        flex-direction: column
+        justify-content: flex-end
+.middle_box_slider
+    width: 100%
+    height: auto
+    display: flex
+    align-items: center
+    justify-content: space-between
+    min-height: 610px
+
+// Slider IN MIDDLE BOX =============================================
+.slider_container 
+    width: 1500px
+    height: auto
+    min-height: 550px
+    position: relative
+.item_slider
+    max-width: 95%
+    height: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0 0 15px #000000
+.inner_item
+    max-width: 100%
+    height: auto
+    min-height: 620px
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    border: 1px solid #000000
+    img
+        box-shadow: 0 0 15px #000000
+.inner_under_content
+    h3
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 151px
+        height: 50px
+.content_under_img
+    width: 230px
+    height: 170px
+    display: flex
+    align-items: center
+    flex-direction: column
+    justify-content: space-between
+    text-align: center
+    p
+        color: $white
+        font-size: 1em
+        margin: 0
+        padding: 0
+    strong
+        margin-bottom: 10px
+        font-size: 1.2em
+        color: $red
+.btn-in-item
+    width: 180px
+    height: 40px
+    background: $gradientRed
+    color: $white
+    box-shadow: 0 0 15px #eb0e0e86
+
+.button_iner
+    width: 5%
+    height: auto
+    height: 250px
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+.slick-prev,
+.slick-next
+    width: 69px
+    height: 64px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $red
+    box-shadow: 0 0 15px #eb0e0e86
+.under_inner_btn
+    width: 100%
+    height: auto       
+.inner_popUp_detail
+    display: none
+    width: 13.5%
+    align-items: center
+    justify-content: center
+    min-height: 100%
+    top: 0
+    left: 25%
+    position: fixed
+    z-index: 2
+    align-items: center
+    justify-content: center
+    background-color: #00000083
+.window_info
+    width: 20%
+    min-height: 400px
+    background: $gradientRed
+    border: 2px solid #000000
+    p
+        font-size: 2em
+        color: $white
+.header_window
+    width: 100%
+    min-height: 70px
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    background: $buttonGradient
+    img
+        cursor: pointer
+        height: 40px
+        width: 40px
+
+//== Wrapper gallery ====================================================================================================================
+
+.wrapper_gallery
+    display: flex
+    width: 95%
+    align-items: flex-end
+    justify-content: flex-end
+    background-color: #121212
+    .content_inner
+        width: 95%
+        display: flex
+        min-height: 970px
+        flex-direction: column
+        justify-content: flex-end
+.middle_inner_tabs
+    width: 100%
+    height: auto
+    display: flex
+.tabs__content
+    width: 85%
+    height: auto
+    padding: 0px
+    margin: 0px
+.tabs__item
+    width: 100%
+    height: auto
+.up-img
+    display: flex
+    width: 90%
+    min-height: 310px
+    align-items: center
+    justify-content: space-between
+    img
+        width: 300px
+        height: 300px
+.under-img
+    width: 90%
+    display: flex
+    min-height: 310px
+    align-items: center
+    justify-content: space-between
+    img
+        width: 300px
+        height: 300px
+
+// TABS=============================================================================================
+.btn-menu
+    width: 15%
+    height: auto
+    display: flex
+    align-items: center
+    justify-content: center
+.tabs__nav
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 300px
+
+.tabs__nav-btn
+    width: 200px
+    height: 50px
+    background: $gradientRed
+    color: $white
+    font-size: 1.2em
+    box-shadow: 0 0 15px #eb0e0e86
+
+.tabs__nav-btn:last-child
+    border-right: none
+
+.tabs__nav-btn:hover
+    outline: none
+
+.tabs__nav-btn.active
+    outline: none
+    background: linear-gradient(90deg, #232526 0%, #414345 100%)
+    color: #fff
+    box-shadow: 0 0 15px #000000
+
+.tabs__content
+    display: flex
+.tabs__item
+    display: none
+
+.tabs__item.active
+    display: block
+// TABS - END =============================================================================================
+
+// SLIDE 5 WRAPPER_CONTACTS  ========================================================================================
+.wrapper_contacts
+    width: 100%
+    height: auto
+    display: flex 
+    align-items: flex-end
+    justify-content: flex-end
+    background-color: $black
+    .content_inner
+        width: 95%
+        height: auto
+        min-height: 970px
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+.middle_inner_contacts
+    width: 100%
+    height: auto
+    display: flex
+.left_inner_contacts
+    width: 40%
+    min-height: 620px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+.up_block_adress
+    width: 100%
+    min-height: 163px
+    font-size: 1.2em
+    :nth-child(1)
+        color: $red
+    :nth-child(2)
+        color: $white
+    :nth-child(3)
+        color: $red
+    :nth-child(4)
+        color: $red 
+.under_block_contacts
+    width: 100%  
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 400px
+    :nth-child(1)
+        color: $red
+    :nth-child(2)
+        color: $white
+        text-decoration: underline
+    :nth-child(3)
+        color: $red
+    :nth-child(4)
+        color: $white
+    button
+        width: 308px
+        height: 55px
+        background: $gradientRed
+        font-size: 1.2em
+        color: $white
+    form
+        align-items: start
+        min-height: 120px
+        input
+            width: 300px
+            height: 50px
+            background-color: #717171
+        
+.right_inner_map
+    display: flex
+    justify-content: flex-end
+    width: 60%
+    
